@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailwindCSS Layout</title>
+    <!-- Link to TailwindCSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for additional styling */
+        .hero-bg {
+            background-image: url('https://source.unsplash.com/random/1600x900');
+        }
+
+        .rotate:hover {
+            transform: rotate(3deg) scale(1.05);
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .overlay-bg {
+            background: linear-gradient(45deg, rgba(29, 78, 216, 0.7), rgba(56, 189, 248, 0.7));
+        }
+
+        .slide-up {
+            animation: slideUp 2s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <nav
+        class="bg-gradient-to-r from-blue-500 to-teal-400 text-white p-4 fixed w-full flex justify-between items-center z-10 shadow-lg">
+        <div class="logo">
+            <h1 class="text-white text-3xl font-bold">Atxree</h1>
+
+        </div>
+        <ul class="flex space-x-6 text-lg">
+            <li><a href="#" class="hover:text-teal-200">Home</a></li>
+            <li><a href="#" class="hover:text-teal-200">About</a></li>
+            <li><a href="#" class="hover:text-teal-200">Games</a></li>
+            <li><a href="#" class="hover:text-teal-200">Developer</a></li>
+            <li><a href="#" class="hover:text-teal-200">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="relative h-screen hero-bg bg-cover bg-center flex items-center justify-center">
+        <!-- Overlay with Flexbox for Centering Content -->
+        <div class="absolute inset-0 overlay-bg flex flex-col items-center justify-center space-y-6">
+            <!-- Main Title with Animation -->
+            <h1 class="text-white text-6xl font-bold slide-up">Enter the Arena</h1>
+            <!-- Subtitle with Italic and Adjusted Styling -->
+            <p class="mt-4 text-2xl italic text-white bg-black bg-opacity-50 px-4 py-2 rounded-lg shadow-lg slide-up">
+                Join the battle, rise to glory, and become a legend.
+            </p>
+        </div>
+    </section>
+    
+
+
+
+    <header class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-8 text-center shadow-md">
+        <h1 class="text-4xl font-extrabold uppercase tracking-wider">Conquer the Shinobi World</h1>
+        <p class="mt-2 text-xl italic">Join the battle, rise to glory, and become a legend.</p>
+    </header>
+
+    <section class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transform rotate transition duration-300">
+            <img src="image/game1.jpg" alt="Creative Design" class="w-full h-auto rounded-t-lg">
+            <h3 class="mt-4 text-2xl font-bold text-gray-800">Naruto x Boruto Ultimate Ninja Storm Connection</h3>
+            <p class="mt-2 text-gray-600">NARUTO X BORUTO Ultimate Ninja STORM CONNECTIONS is an action/fighting game
+                with fast-paced ninja battles and two different story modes.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transform rotate transition duration-300">
+            <img src="image/game2.jpg" alt="Responsive Development" class="w-full h-auto rounded-t-lg">
+            <h3 class="mt-4 text-2xl font-bold text-gray-800">Naruto Shippuden: Ultimate Ninja Storm 4</h3>
+            <p class="mt-2 text-gray-600">The latest opus in the acclaimed STORM series is taking you on a colourful and
+                breathtaking ride. Take advantage of the totally revamped battle system and prepare to dive into the
+                most epic fights you’ve ever seen !</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transform rotate transition duration-300">
+            <img src="image/game3.jpg" alt="Innovative Solutions" class="w-full h-auto rounded-t-lg">
+            <h3 class="mt-4 text-2xl font-bold text-gray-800">Naruto Shippuden: Ultimate Ninja 5</h3>
+            <p class="mt-2 text-gray-600">The game also includes an RPG mode where players can roam sections of the
+                village and interact with the surroundings of the story and villagers.</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 shadow-md rounded-lg rotate transition duration-300">
+            <h2 class="text-xl font-semibold mb-4">Naruto Uzumaki</h2>
+            <p class="text-gray-600">Naruto Uzumaki is a shinobi of Konohagakure's Uzumaki clan. He became the jinchūriki of the Nine-Tails on the day of his birth.</p>
+        </div>
+        <div class="bg-white p-6 shadow-md rounded-lg rotate transition duration-300">
+            <h2 class="text-xl font-semibold mb-4">Sasuke Uchiha</h2>
+            <p class="text-gray-600">Sasuke Uchiha is one of the last surviving members of Konohagakure's Uchiha clan.</p>
+        </div>
+        <div class="bg-white p-6 shadow-md rounded-lg rotate transition duration-300">
+            <h2 class="text-xl font-semibold mb-4">Boruto Uzumaki</h2>
+            <p class="text-gray-600">Boruto Uzumaki is a missing-nin from Konohagakure's Uzumaki clan and a direct descendant of the Hyūga clan through his mother.</p>
+        </div>
+        <div class="bg-white p-6 shadow-md rounded-lg rotate transition duration-300">
+            <h2 class="text-xl font-semibold mb-4">Kawaki</h2>
+            <p class="text-gray-600">Kawaki is a genin who was raised by Kara to be the future vessel for Isshiki Ōtsutsuki and the key to the fulfilment of their greatest wish.</p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+<section class="bg-gradient-to-r from-orange-400 to-red-500 text-white p-8 text-center">
+    <h2 class="text-3xl font-bold text-black">Become a Part of the Shinobi World!</h2>
+    <p class="mt-2 text-black">Join forces, train hard, and rise to become the strongest ninja in the world. Are you ready for the challenge?</p>
+    <button
+        class="mt-4 bg-yellow-500 text-black font-semibold rounded-full px-6 py-3 hover:bg-yellow-600 hover:text-white transition ease-in-out duration-300 transform hover:scale-105">
+        Start Your Ninja Journey
+    </button>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <p>&copy; 2024 Atxree. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
